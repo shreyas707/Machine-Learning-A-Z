@@ -61,7 +61,7 @@ regressor_OLS = sm.OLS(endog = y, exog = X_opt).fit()
 regressor_OLS.summary()
 
 # Removing x2 as its P value is higher than 0.05 and is the highest of all
-X_opt = X[:, [0, 1, 3, 4, 5]
+X_opt = X[:, [0, 1, 3, 4, 5]]
 regressor_OLS = sm.OLS(endog = y, exog = X_opt).fit()
 regressor_OLS.summary()
 
