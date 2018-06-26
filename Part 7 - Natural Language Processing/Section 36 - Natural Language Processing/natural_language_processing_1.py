@@ -23,6 +23,7 @@ from nltk.stem.porter import PorterStemmer
 # corpus is a collection of text in ml terms
 corpus = []
 # range(0, 1000) - 0 is the lower bound, 1000 is the upper bound
+stop_words = set(stopwords.words('english'))
 for i in range(0, 1000):
     # dataset['Review'][0] gives the first review
     # remove anything that is not a-z or A-Z. ' ' (second parameter) is so that spaces are not removed making the words stick together
