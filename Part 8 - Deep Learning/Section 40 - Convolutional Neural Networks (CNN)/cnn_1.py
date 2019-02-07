@@ -8,6 +8,7 @@ from keras.layers import Convolution2D
 from keras.layers import MaxPooling2D
 from keras.layers import Flatten
 from keras.layers import Dense
+import time
 
 # Initialising the CNN
 # initialize the cnn as a sequence of layers
@@ -60,8 +61,12 @@ test_set = test_datagen.flow_from_directory('dataset/test_set',
                                             batch_size = 32,
                                             class_mode = 'binary')
 
+start_time = time.time()
+
 classifier.fit_generator(training_set,
                          samples_per_epoch = 8000,
                          nb_epoch = 25,
                          validation_data = test_set,
                          nb_val_samples = 2000)
+
+print("--- %s seconds ---" % (time.time() - start_time))
